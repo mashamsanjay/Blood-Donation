@@ -73,7 +73,7 @@ function loadSearch(){
 const searchBtn = document.getElementById("search-btn");
 
 // Add event listener to the search button
-searchBtn.keyboarListener("click", function() {
+searchBtn.onkeydown("click", function() {
     // Redirect the user to the search donor details page
     window.location.href = "search.html";
 });
