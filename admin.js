@@ -13,7 +13,7 @@ let campaigns = [
 
 function displayCampaigns() {
     const campaignTableBody = document.getElementById('campaign-table-body');
-    campaignTableBody.innerHTML = '';
+    campaignTableBody.innerHTML = "<html></html>";
     campaigns.forEach((campaign, index) => {
         campaignTableBody.innerHTML += `
             <tr>
