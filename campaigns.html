@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns - Blood & Organ Donation Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .statistics {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 25%;
+            position: relative;
+        }
+        .circle-wrap {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+        .circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                #bd4415 0%,
+                #e0e0e0 0%,
+                #e0e0e0 100%
+            );
+            animation: none; /* Animation will be controlled by JavaScript */
+        }
+        .circle-wrap p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            font-size: 30px;
+            font-weight: bold;
+            color: #bc1a81;
+        }
+        .stat-box h3 {
+            margin: 10px 0;
+        }
+        .campaign-list {
+            margin: 20px 0;
+        }
+        .campaign {
+            background-color: #e5e9ec;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .campaign h4 {
+            margin-top: 0;
+        }
+        .counter {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .counter p {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Campaigns</h2>
+        <div class="statistics">
+            <div class="stat-box">
+                <div class="circle-wrap">
+                    <div class="circle" id="circle1"></div>
+                    <p id="percentage1">0%</p>
+                </div>
+                <h3>Registered Users</h3>
+            </div>
+            <div class="stat-box">
+                <div class="circle-wrap">
+                    <div class="circle" id="circle2"></div>
+                    <p id="percentage2">0%</p>
+                </div>
+                <h3>Successful Donations</h3>
+            </div>
+            <div class="stat-box">
+                <div class="circle-wrap">
+                    <div class="circle" id="circle3"></div>
+                    <p id="percentage3">0</p>
+                </div>
+                <h3>Upcoming Campaigns</h3>
+            </div>
+        </div>
+        <div class="campaign-list">
+            <h3>Upcoming Campaigns</h3>
+            <div class="campaign">
+                <h4>Blood Donation Drive</h4>
+                <p>Date: June 10, 2024</p>
+                <p>Location: Community Hall, Main Street</p>
+                <p>Description: Join us for a blood donation drive to help those in need. Refreshments provided.</p>
+            </div>
+            <div class="campaign">
+                <h4>Organ Donation Awareness</h4>
+                <p>Date: July 5, 2024</p>
+                <p>Location: City Park</p>
+                <p>Description: Learn about the importance of organ donation and how you can make a difference.</p>
+            </div>
+            <div class="campaign">
+                <h4>Health Check-up Camp</h4>
+                <p>Date: August 20, 2024</p>
+                <p>Location: Health Center, Downtown</p>
+                <p>Description: Free health check-ups and consultations for donors and recipients.</p>
+            </div>
+        </div>
+        <div class="counter">
+            <h3>Registrations</h3>
+            <p id="counter">0</p>
+        </div>
+    </main>
+   
+    <script src="page1.js"></script>
+  
+</body>
+</html>
+
+

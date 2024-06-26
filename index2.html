@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background: url('https://c4.wallpaperflare.com/wallpaper/392/36/36/5bd16e60ad82b-wallpaper-preview.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+</style>
+<body>
+    <header>
+        <h1>Donor Registration</h1>
+    </header>
+    <main>
+        <section class="registration-form">
+            <h2>Register to Donate</h2>
+            <form id="donor-form" onsubmit="return validateForm()" action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" required><br>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br>
+                
+                    <label for="Donor Number">Donor Number:</label>
+                    <input type="text" id="Donor-Number" name="Donor Number">
+                    <span id="donorNumberError" style="color: red;"></span>
+
+            
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+
+                <label for="blood-type">Blood Type:</label>
+                <select id="blood-type" name="blood-type" required>
+                    <option value="">Select Blood Type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="No">No</option>
+                </select><br>
+
+                <label for="organ-donation">Organ Donation:</label><br>
+                <input type="checkbox" id="heart" name="organ[]" value="heart">
+                <label for="heart">Heart</label><br>
+                <input type="checkbox" id="liver" name="organ[]" value="liver">
+                <label for="liver">Liver</label><br>
+                <input type="checkbox" id="kidney" name="organ[]" value="kidney">
+                <label for="kidney">Kidney</label><br>
+                <input type="checkbox" id="eyes" name="organ[]" value="eyes">
+                <label for="eyes">eyes</label><br>
+                <input type="checkbox" id="blood" name="organ[]" value="blood">
+                <label for="blood">blood</label><br>
+                <input type="checkbox" id="No" name="organ[]" value="No">
+                <label for="No">No</label><br>
+                <!-- Add more checkboxes for other organs if needed -->
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address"><br>
+
+                <button type="submit" class="register-button">Register</button>
+
+            </form>
+        </section>
+    </main>
+    <div id="popup-message" class="popup">
+        <p>Successfully registered! Thank you for donating.</p>
+        <a href="details.html"><button>OK</button></a>
+    </div>
+    <script>
+        function storeDonorDetails() {
+            // Get form data
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var gender = document.getElementById("gender").value;
+            var donorNumber = document.getElementById("Donor-Number").value; // Corrected ID
+            var email = document.getElementById("email").value;
+            var bloodType = document.getElementById("blood-type").value;
+            var organs = [];
+            var organCheckboxes = document.querySelectorAll('input[name="organ[]"]:checked');
+            organCheckboxes.forEach(function(checkbox) {
+                organs.push(checkbox.value);
+            });
+            var address = document.getElementById("address").value;
+          
+            // Store donor details in local storage
+            var donorDetails = {
+                name: name,
+                age: age,
+                gender: gender,
+                donorNumber: donorNumber,
+                email: email,
+                bloodType: bloodType,
+                organs: organs,
+                address: address
+            };
+            localStorage.setItem("donorDetails", JSON.stringify(donorDetails));
+            console.log("Storing donor details...");
+            // Redirect to details.html
+            window.location.href = "details.html";
+        }
+    </script>
+    <script>
+        function validateForm() {
+            var popup= document.getElementById("popup-message");
+            popup.style.display="block";
+            return false;
+        }
+    </script>
+
+    
+
+    
+
+    <script src="page1.js"></script>
+    
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+    
+
+

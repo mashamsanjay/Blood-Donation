@@ -1,0 +1,373 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 10;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light gray background color */
+}
+
+header {
+    background-color: #ec6c3a; /* White background for header */
+    padding: 10px 20px ;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 50px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 20px;
+}
+nav {
+    margin-left: auto;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+.navbar-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 1.8em;
+}
+.navbar-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+/* Add your existing CSS styles here */
+
+.blink-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: blink 1s infinite alternate; /* Blinking animation */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+header h1 {
+    color: #792128;
+    font-size: 32px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:#0c0b0b;
+    font-size: 18px;
+}
+.navbar-nav li {
+    margin-right: 20px;
+}
+
+.navbar-nav li a {
+    color: #170606;
+    text-decoration: none;
+}
+
+.navbar-nav li a:hover {
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* CSS for registration form */
+
+.registration-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h2 {
+    margin-top: 10;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-form label {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 120px; /* Adjust width as needed */
+    vertical-align: top; /* Align label text to top */
+}
+
+.registration-form input[type="text"]{
+    width: calc(100% - 130px); /* Adjust width to account for label width */
+    vertical-align: top; /* Align input field to top */
+}
+
+.registration-form input[type="checkbox"] {
+    width: calc(30% - 130px); /* Adjust width to account for label width */
+    vertical-align: top; /* Align input field to top */
+}
+
+.register-button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+/* Specific styling for home page */
+.hero {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* CSS for home page content */
+.hero {
+    display: flex; /* Use flexbox layout */
+    padding: 20px;
+}
+.hero h2{
+    color: #792128;
+}
+.hero p{
+    color: #090b0c;
+    font-size: 20px;
+}
+
+.image {
+    width: 50%; /* Adjust the width of the image section */
+}
+
+.info {
+    width: 50%; /* Adjust the width of the information section */
+}
+
+.home-image {
+    width: 100%;
+    height: auto;
+}
+
+
+.about {
+    text-align:left;
+    margin-top: 40px;
+}
+.about h2 {
+    font-size: 23px;
+    color:#792128; /* Blue color for headings */
+}
+.about p{
+    font-size:20px ;
+}
+/* CSS for logo */
+.logo-image {
+    height:150px;
+    padding-right: 1000px;
+}
+
+/* Rest of your CSS styles */
+.contact h2{
+    color: #792128;
+}
+.contact {
+    text-align: center;
+}
+.social-icon-img {
+    margin-top: 20px;
+    height: 50px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    padding: 20px;
+}
+.search-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.search-form h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.search-form label {
+    display: inline-block;
+    width: 120px; /* Adjust width as needed */
+    vertical-align: top; /* Align label text to top */
+}
+.search-form input[type="text"]{
+    width: calc(100% - 130px); /* Adjust width to account for label width */
+    vertical-align: top; /* Align input field to top */
+}
+
+.search-form input[type="checkbox"] {
+    width: calc(30% - 130px); /* Adjust width to account for label width */
+    vertical-align: top; /* Align input field to top */
+}
+
+.search-button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.search-button:hover {
+    background-color: #45a049;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 2px solid #333;
+    padding: 20px;
+    z-index: 1000;
+}
+.popup button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Increase the top margin to create space */
+    display: block; /* Change display to block to center the button */
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto;
+}
+.back-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* Make it behave like a block element */
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+
+        /* Styles for popup modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    

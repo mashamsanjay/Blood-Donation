@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Donors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+        body {
+    font-family: Arial, sans-serif;
+    background: url('https://c4.wallpaperflare.com/wallpaper/392/36/36/5bd16e60ad82b-wallpaper-preview.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+</style>
+<body>
+    <header>
+        <h1>Search for Donors</h1>
+    </header>
+    <main>
+        <section class="search-form">
+            <h2>Find a Donor</h2>
+            <form id="search-form" onsubmit="searchDonors(); return false;">
+                <label for="blood-type">Blood Type:</label>
+                <select id="blood-type" name="blood-type">
+                    <option value="">Select Blood Type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select><br>
+                <label for="organ-donation">Organ Donation:</label><br>
+                <input type="checkbox" id="heart" name="organ[]" value="heart">
+                <label for="heart">Heart</label><br>
+                <input type="checkbox" id="liver" name="organ[]" value="liver">
+                <label for="liver">Liver</label><br>
+                <input type="checkbox" id="kidney" name="organ[]" value="kidney">
+                <label for="kidney">Kidney</label><br>
+                <input type="checkbox" id="eyes" name="organ[]" value="eyes">
+                <label for="eyes">Eyes</label><br>
+                <input type="checkbox" id="blood" name="organ[]" value="blood">
+                <label for="blood">Blood</label><br>
+                <!-- Add more checkboxes for other organs if needed -->
+                <button onclick="searchDonors" type="submit" class="search-button">Search</button>
+            </form>
+        </section>
+        <section id="search-results" class="search-results">
+            <!-- Search results will be displayed here --->
+        </section>
+    
+    </main>
+    <ul>
+    <a href="page1.js"></a>
+    </ul>
+    <script>
+        function searchDonors() {
+            const bloodType = document.getElementById('search-blood-type').value.trim();
+            const organType = document.getElementById('search-organ-type').value.trim();
+            const resultsTable = document.getElementById('results-table');
+            const resultsTableBody = document.getElementById('results-table-body');
+            const errorMessage = document.getElementById('error-message');
+
+            resultsTable.style.display = 'none';
+            resultsTableBody.innerHTML = '';
+            errorMessage.style.display = 'none';
+            errorMessage.textContent = '';
+
+            const donors = JSON.parse(localStorage.getItem('donors')) || [];
+            const filteredDonors = donors.filter(donor => {
+                return (bloodType === '' || donor.bloodType === bloodType) &&
+                       (organType === '' || donor.organsDonated.toLowerCase().includes(organType.toLowerCase()));
+            });
+
+            if (filteredDonors.length > 0) {
+                filteredDonors.forEach(donor => {
+                    resultsTableBody.innerHTML += `
+                        <tr>
+                            <td>${donor.name}</td>
+                            <td>${donor.email}</td>
+                            <td>${donor.phone}</td>
+                            <td>${donor.gender}</td>
+                            <td>${donor.bloodType}</td>
+                            <td>${donor.organsDonated}</td>
+                            <td>${donor.donorType}</td>
+                            <td>${donor.address}</td>
+                        </tr>
+                    `;
+                });
+                resultsTable.style.display = 'table';
+            } else {
+                errorMessage.textContent = 'No donors found matching the search criteria.';
+                errorMessage.style.display = 'block';
+            }
+        }
+
+    </script>
+  
+     
+
+
+    
+   
+</body>
+</html>

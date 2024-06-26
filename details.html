@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Donor Details</h1>
+    </header>
+    <main>
+        <section class="donor-details">
+        
+
+            <h2>Donor Details</h2>
+            <div id="donor-details"></div>
+            <a href="index.html" class="back-button">Back</a>
+        </section>
+    </main>
+
+    <!-- JavaScript to display donor details -->
+    <script>
+        // Retrieve donor details from local storage
+        var donorDetails = JSON.parse(localStorage.getItem("donorDetails"));
+
+        // Display donor details
+        if (donorDetails) {
+            var donorDetailsHTML = "<p><strong>Name:</strong> " + donorDetails.name + "</p>";
+            donorDetailsHTML += "<p><strong>Age:</strong> " + donorDetails.age + "</p>";
+            donorDetailsHTML += "<p><strong>Gender:</strong> " + donorDetails.gender + "</p>";
+            donorDetailsHTML += "<p><strong>Donor Number:</strong> " + donorDetails.donorNumber + "</p>";
+            donorDetailsHTML += "<p><strong>Email:</strong> " + donorDetails.email + "</p>";
+            donorDetailsHTML += "<p><strong>Blood Type:</strong> " + donorDetails.bloodType + "</p>";
+            donorDetailsHTML += "<p><strong>Organs Donated:</strong> " + donorDetails.organs.join(", ") + "</p>";
+            donorDetailsHTML += "<p><strong>Address:</strong> " + donorDetails.address + "</p>";
+            document.getElementById("donor-details").innerHTML = donorDetailsHTML;
+        } else {
+            document.getElementById("donor-details").innerHTML = "<p>No donor details found.</p>";
+        }
+        
+    </script>
+   
+  
+  
+     <script src="page1.js"></script>
+</body>
+</html>
